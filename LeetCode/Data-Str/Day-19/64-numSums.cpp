@@ -3,7 +3,7 @@
 class Solution {
 public:
     int sumNums(int n) {
-        n > 1 && (n += sumNums(n-1));
+        n > 1 && (n += sumNums(n-1));   # 只有两个同时成立才会执行
         return n;
     }
 };
