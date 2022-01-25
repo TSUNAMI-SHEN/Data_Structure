@@ -31,10 +31,10 @@ public:
 private:
     int depth(TreeNode* root){
         if (root == nullptr) return 0;
-        int left = depth(root->left);
+        int left = depth(root->left);   # 得到左子树的深度
         if (left == -1) return -1;
         int right = depth(root->right);
         if (right == -1) return -1;
-        return abs(left - right) <= 1 ? max(left, right) + 1 : -1;
+        return abs(left - right) <= 1 ? max(left, right) + 1 : -1;  # 进行判断，如果左右子树高度差大于1，则不是平衡树，直接返回false，否则返回左右子树中高度的较大值+1
     }
 };
