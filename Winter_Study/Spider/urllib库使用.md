@@ -45,4 +45,7 @@ except进行捕获异常，异常有两类，URLError\HTTPError
     4.隐藏真实IP
     扩展:上网者也可以通过这种方法隐藏自己的IP，免受攻击。 
   # 2.代码配置代理
-    创建Reuqest对象 创建ProxyHandler对象 用handler对象创建opener对象 使用opener.open函数发送请求
+    创建Reuqest对象
+    创建ProxyHandler对象
+    用handler对象创建opener对象
+    使用opener.open函数发送请求
