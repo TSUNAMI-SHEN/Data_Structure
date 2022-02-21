@@ -1,3 +1,4 @@
+# 双指针方法
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
         fast = slow = 0
