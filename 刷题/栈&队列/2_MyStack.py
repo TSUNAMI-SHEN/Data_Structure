@@ -1,5 +1,6 @@
 from collections import deque
 
+# 两个队列
 class MyStack:
 
     def __init__(self):
@@ -59,3 +60,34 @@ class MyStack:
         因为只有in存了数据，只要判断in是不是有数即可
         """
         return len(self.queue_in) == 0
+    
+    
+# 只使用一个队列
+class MyStack:
+
+    def __init__(self):
+        self.q = deque()
+
+    def push(self, x: int) -> None:
+        self.q.append(x)    # 先将新元素加入队列，再将前n-1个元素出队再入队
+        size = len(self.q)
+        while size > 1:
+            self.q.append(self.q.popleft())
+            size -= 1
+
+    def pop(self) -> int:
+        return self.q.popleft()
+
+    def top(self) -> int:
+        return self.q[0]
+
+    def empty(self) -> bool:
+        return len(self.q) == 0
+
+
+# Your MyStack object will be instantiated and called as such:
+# obj = MyStack()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.empty()
