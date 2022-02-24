@@ -27,11 +27,11 @@ class Solution:
         while cur or stack:
             if cur:
                 stack.append(cur)
-                cur = cur.left
+                cur = cur.left  # 中序遍历，先将左节点都压入栈
             else:
-                cur = stack.pop()
+                cur = stack.pop()   # 出栈，即输出中间节点
                 if pre:
                     result = min(result, cur.val - pre.val)
                 pre = cur
-                cur = cur.right
+                cur = cur.right # 最后压入右节点
         return result
