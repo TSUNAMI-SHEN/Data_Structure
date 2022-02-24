@@ -26,3 +26,16 @@ class Solution:
 
             results.append(result)
         return len(results)   
+
+# 递归法
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        return self.getdepth(root)
+        
+    def getdepth(self, node):   # 参数是需要处理的，传入的是节点
+        if not node:    # 终止条件，节点为空
+            return 0
+        leftdepth = self.getdepth(node.left)
+        rightdepth = self.getdepth(node.right)
+        depth = 1 + max(leftdepth, rightdepth)  # 单层逻辑：求左、右子树的深度，再取最大值
+        return depth    # 返回的是深度值
