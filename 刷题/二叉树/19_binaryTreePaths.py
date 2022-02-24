@@ -44,7 +44,7 @@ class Solution:
                 result.append(path)
             if cur.right:
                 stack.append(cur.right)
-                path_st.append(path + '->' + str(cur.right.val))
+                path_st.append(path + '->' + str(cur.right.val))        # 每次函数调用完时，path依然是没有加上->的，回溯到上一步再加上
             if cur.left:
                 stack.append(cur.left)
                 path_st.append(path + '->' + str(cur.left.val))
