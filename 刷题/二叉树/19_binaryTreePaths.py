@@ -27,6 +27,33 @@ class Solution:
         if cur.right:
             self.traversal(cur.right, path + '->', result)
 
+class Solution:
+    def binaryTreePaths(self, root: TreeNode) -> List[str]:
+        result = []
+        path = []
+        if not root:
+            return result
+        self.traversal(root, path, result)
+        return result
+        
+    def traversal(self, cur, path, result):
+        path.append(cur.val)
+        #这才到了叶子节点
+        if not cur.left and not cur.right:
+            sPath = ""
+            for i in range(len(path)-1):
+                sPath += str(path[i])
+                sPath += "->"
+            sPath += str(path[len(path)-1])
+            result.append(sPath)
+            return
+        if cur.left:
+            self.traversal(cur.left, path, result)
+            path.pop() #回溯
+        if cur.right:
+            self.traversal(cur.right, path, result)
+            path.pop() #回溯
+            
 # 迭代法
 class Solution:
     def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
