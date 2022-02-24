@@ -39,3 +39,13 @@ class Solution:
         rightdepth = self.getdepth(node.right)
         depth = 1 + max(leftdepth, rightdepth)  # 单层逻辑：求左、右子树的深度，再取最大值
         return depth    # 返回的是深度值
+
+# N叉树的最大深度，遍历方法
+class Solution:
+    def maxDepth(self, root: 'Node') -> int:
+        if not root:
+            return 0
+        depth = 0
+        for i in range(len(root.children)):
+            depth = max(depth, self.maxDepth(root.children[i]))
+        return depth+1
