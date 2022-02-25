@@ -19,7 +19,7 @@ class Solution:
         
         for i in range(startIndex, len(nums)):
 
-            if i > startIndex and nums[i] == nums[i-1]:
+            if i > startIndex and nums[i] == nums[i-1]: # 当前后元素值相同时，跳入下一个循环，去重
                 continue
             
             self.path.append(nums[i])
