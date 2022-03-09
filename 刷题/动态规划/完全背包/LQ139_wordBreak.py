@@ -9,5 +9,5 @@ class Solution:
             # 再遍历物品
             for word in wordDict:
                 if j >= len(word):
-                    dp[j] = dp[j] or (dp[j-len(word)] and word == s[j-len(word):j])
-        return dp[len(s)]
+                    dp[j] = dp[j] or (dp[j-len(word)] and word == s[j-len(word):j])     # # 递推公式：如果[j,i]这个子串出现在字典里而且dp[j]为True，那么dp[i]也为True
+        return dp[len(s)]   
